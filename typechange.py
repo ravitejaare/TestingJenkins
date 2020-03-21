@@ -6,8 +6,8 @@ for reservations in instances['Reservations']:
      if(instance['State']['Name'] == 'running'):
        #ec2.stop_instances(InstanceIds=[instance['InstanceId']])
         ec2.stop_instances(InstanceIds=['$InstanceId'])
-        ec2.modify_instance_attribute(InstanceId=$InstanceId, Attribute='instanceType', Value=$type)
+        ec2.modify_instance_attribute(InstanceId='$InstanceId', Attribute='instanceType', Value=$type)
         ec2.start_instances(InstanceIds=['$InstanceId'])
      else:
-       ec2.modify_instance_attribute(InstanceId=$InstanceId, Attribute='instanceType', Value=$type)
+       ec2.modify_instance_attribute(InstanceId='$InstanceId', Attribute='instanceType', Value=$type)
        ec2.start_instances(InstanceIds=['$InstanceId'])
