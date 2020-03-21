@@ -1,6 +1,6 @@
 import boto3
 import sys
-ec2 = boto3.client('ec2')
+ec2 = boto3.client('ec2',region_name='us-east-1')
 instances = ec2.describe_instances()
 print("this is instanceid", sys.argv[1])
 print("the instance type",sys.argv[2])
