@@ -13,7 +13,7 @@ for reservations in instances['Reservations']:
      if((instance['State']['Name'] == 'running') and (instance['InstanceId'] ==sys.argv[1])):
        #ec2.stop_instances(InstanceIds=[instance['InstanceId']])
         print("this is instanceid", sys.argv[2])
-        ec2.stop_instances(InstanceIds=['id'])
+        ec2.stop_instances(InstanceIds=[id])
         ec2.modify_instance_attribute(InstanceId=id, Attribute='instanceType', Value=type)
         ec2.start_instances(InstanceIds=[id])
      else:
