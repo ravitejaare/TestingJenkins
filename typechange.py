@@ -2,7 +2,7 @@ import boto3
 import sys
 ec2 = boto3.client('ec2')
 instances = ec2.describe_instances()
-print("this is instanceid", 'sys.argv[0]')
+print("this is instanceid", sys.argv[0])
 
 #print("this is id: os.getenv("InstanceID")")
 for reservations in instances['Reservations']:
