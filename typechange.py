@@ -14,6 +14,8 @@ for reservations in instances['Reservations']:
        #ec2.stop_instances(InstanceIds=[instance['InstanceId']])
         print("this is instanceid", sys.argv[2])
         ec2.stop_instances(InstanceIds=[id])
+        waiter=ec2.get_waiter('instance_stopped')
+        waiter.wait(InstanceIds=[id])
         ec2.modify_instance_attribute(InstanceId=id, Attribute='instanceType', Value=type)
         ec2.start_instances(InstanceIds=[id])
      else:
