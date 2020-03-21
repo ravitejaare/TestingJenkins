@@ -10,7 +10,7 @@ type= sys.argv[2]
 #print("this is id: os.getenv("InstanceID")")
 for reservations in instances['Reservations']:
   for instance in reservations['Instances']:
-     if((instance['State']['Name'] == 'running') && (instance['InstanceId'] ==sys.argv[1])):
+     if((instance['State']['Name'] == 'running') and (instance['InstanceId'] ==sys.argv[1])):
        #ec2.stop_instances(InstanceIds=[instance['InstanceId']])
         print("this is instanceid", sys.argv[2])
         ec2.stop_instances(InstanceIds=[id])
