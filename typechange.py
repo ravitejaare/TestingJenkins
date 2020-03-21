@@ -1,6 +1,7 @@
 import boto3
 ec2 = boto3.client('ec2')
 instances = ec2.describe_instances()
+echo '$InstanceId'
 for reservations in instances['Reservations']:
   for instance in reservations['Instances']:
      if(instance['State']['Name'] == 'running'):
