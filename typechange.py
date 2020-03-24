@@ -20,5 +20,5 @@ for reservations in instances['Reservations']:
         ec2.start_instances(InstanceIds=[id])
      else:
        ec2.modify_instance_attribute(InstanceId=id, Attribute='instanceType', Value=type)
-       ec2.start_instances(InstanceIds=[id])
+       #ec2.start_instances(InstanceIds=[id])
 
